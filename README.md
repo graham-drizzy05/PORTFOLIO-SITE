@@ -1,4 +1,4 @@
-# Portfolio-Site
+
 # 🌐 George Dintwe — Portfolio Website
 
 Welcome to the source code of my personal portfolio website — a clean, responsive, one-page design showcasing my skills, projects, and certifications.
