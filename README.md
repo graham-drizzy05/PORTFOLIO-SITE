@@ -5,7 +5,7 @@ Welcome to the source code of my personal portfolio website — a clean, respons
 
 ## 🚀 Live Site
 
-🔗 [URL](https://graham-drizzy05.github.io/Portfolio-Site/)
+🔗 [CLICK HERE TO VISIT THE WEBSITE](https://graham-drizzy05.github.io/Portfolio-Site/)
 
 ## 🛠️ Built With
 
