@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>George Dintwe | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #e5e5e5;
+      --accent: #00ffe0;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-mono);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 0%;
+      background: var(--accent);
+      transition: width 0.3s ease;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    header {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
+    header p {
+      margin-top: 1rem;
+      color: #a1a1aa;
+      white-space: pre-line;
+    }
+
+    header .cta {
+      margin-top: 2rem;
+      background: none;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.5rem 1.25rem;
+      text-decoration: none;
+      transition:background 0.3s, color 0.3s;
+    }
+
+    header .cta:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 6rem 1rem 4rem;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    pre.project-block {
+      background: #111;
+      padding: 1rem;
+      border-left: 3px solid var(--accent);
+      white-space: pre-wrap;
+      margin-bottom: 2rem;
+    }
+
+    .contact a.download {
+      display: inline-block;
+      margin-top: 1rem;
+      background: none;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.5rem 1.25rem;
+      text-decoration: none;
+    }
+
+    .contact a.download:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .social-icons {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .social-icons a {
+      color: var(--fg);
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: #6b7280;
+      font-size: 0.8rem;
+    }
+    .modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 200;
+    }
+
+    .modal.hidden {
+        display: none;
+    }
+
+    .modal-content {
+        background: #111;
+        color: var(--fg);
+        padding: 2rem;
+        width: 90%;
+        max-width: 400px;
+        border-left: 3px solid var(--accent);
+        position: relative;
+        font-family: var(--font-mono);
+        animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin: 1rem 0;
+        background: #000;
+        color: var(--fg);
+        border: 1px solid var(--accent);
+        font-family: var(--font-mono);
+    }
+
+    .modal-content button {
+        background: var(--accent);
+        color: var(--bg);
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+
+    .modal-content button:hover {
+        background: #00e6c4;
+    }
+
+    .modal-content .close {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background: none;
+        color: var(--accent);
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .step {
+        display: none;
+    }
+
+    .step.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    .contact-dialog-btn {
+  background: none;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.6rem 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  letter-spacing: 0.5px;
+  border-radius: 0;
+}
+
+.contact-dialog-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+
+  </style>
+  <script>
+  let currentStep = 1;
+
+  function openModal() {
+    document.getElementById("contactModal").classList.remove("hidden");
+    currentStep = 1;
+    updateSteps();
+  }
+
+  function closeModal() {
+    document.getElementById("contactModal").classList.add("hidden");
+  }
+
+  function nextStep(step) {
+    currentStep = step + 1;
+    updateSteps();
+  }
+
+  function updateSteps() {
+    document.querySelectorAll(".step").forEach((el, i) => {
+      el.classList.toggle("active", i === currentStep - 1);
+    });
+  }
+
+  function sendForm() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const interest = document.getElementById("interest").value;
+    const message = document.getElementById("message").value;
+
+    const mailto = `mailto:dintwegeorge0@gmail.com?subject=${encodeURIComponent("Inquiry: " + interest)}&body=Hi, my name is ${name} (${email})%0D%0A%0D%0A${message}`;
+    window.location.href = mailto;
+    closeModal();
+  }
+</script>
+
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>George Dintwe</h1>
+    <p>
+&gt; Computer Engineering Student  
+&gt; Web Developer | Software Enthusiast
+    </p>
+    <a href="#projects" class="cta">~/see-projects</a>
+  </header>
+
+
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I’m a second-year Computer Engineering student at CPUT with experience building WordPress sites, WebGL games, and remote collaboration through Omni Secure. My passion lies in writing clean, secure code and solving real-world problems. Currently upskilling in Python, AWS, and cybersecurity.</p>
+  </section>
+
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <pre class="project-block">
+
+        > Interactive 3D Space Shooter
+            Technologies: WebGL, JavaScript
+            Description: Browser game with physics and animations.
+
+        > Brick Breaker Game
+            Technologies: WebGL
+            Description: Animated paddle game using collision detection.
+
+        > Portfolio Website
+            Technologies: HTML, CSS, JavaScript
+            Description: Responsive portfolio site.
+    </pre>
+  </section>
+
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <p><strong>Languages:</strong> Java, JavaScript, C, Python (learning)</p>
+    <p><strong>Web Tech:</strong> HTML, CSS, WebGL, WordPress</p>
+    <p><strong>Tools:</strong> Git, VS Code, DevTools</p>
+    <p><strong>Concepts:</strong> OOP, Data Structures, Responsive Design</p>
+  </section>
+
+  <section id="certifications" data-aos="fade-up">
+    <h2>Certifications</h2>
+    <ul>
+      <li>AWS Cloud Practitioner – Part 1 & 2</li>
+      <li>AWS: Introduction to the Cloud; Demystifying Generative AI</li>
+      <li>Cisco: Cybersecurity; Python Essentials 1 (In Progress)</li>
+      <li>Java Programming; Full Stack Dev; Programming in C</li>
+    </ul>
+  </section>
+
+  <section id="contact" style="padding: 6rem 1rem;" class="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>✉️ <a href="mailto:dintwegeorge0@gmail.com">dintwegeorge0@gmail.com</a></p>
+    <p>📞 +27 63 399 5000</p>
+    <p>📍 Cape Town, South Africa</p>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/george-dintwe-217301281" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.youtube.com/@yourchannel" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+    <a 
+  href="mailto:dintwegeorge0@gmail.com?subject=Requesting%20Resume&body=Hi%20George%2C%0D%0A%0D%0AI%20hope%20you're%20well.%20My%20name%20is%20%5BYour%20Name%5D%2C%20and%20I%E2%80%99d%20like%20to%20kindly%20request%20a%20copy%20of%20your%20resume.%0D%0A%0D%0AThank%20you%2C%0D%0A%5BYour%20Name%5D" 
+  class="download"> Request Resume ✉️</a>
+
+
+  </section>
+  <section style="text-align:center; padding: 6rem 1rem;">
+    <h2>Let's Collaborate!</h2>
+    <button class="contact-dialog-btn" onclick="openModal()">✉️ Get in Touch</button>
+  </section>
+  <div id="contactModal" class="modal hidden" style="text-align:center">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closeModal()">×</button>
+
+        <div class="step step-1 active">
+            <h3>STEP 1/4</h3>
+            <p>Hi, my name is</p>
+            <input type="text" id="name" placeholder="Your name" />
+            <p>and my email is</p>
+            <input type="email" id="email" placeholder="you@example.com" />
+            <button onclick="nextStep(1)">Next</button>
+        </div>
+
+        <div class="step step-2">
+            <h3>STEP 2/4</h3>
+            <p>I'm interested in</p>
+            <input type="text" id="interest" placeholder="e.g. portfolio, web app..." />
+            <button onclick="nextStep(2)">Next</button>
+        </div>
+        <div class="step step-3">
+            <h3>STEP 3/4</h3>
+            <p>Here’s what I need help with:</p>
+            <textarea id="message" placeholder="Describe your idea or request..."></textarea>
+            <button onclick="nextStep(3)">Next</button>
+        </div>
+        <div class="step step-4">
+            <h3>STEP 4/4</h3>
+            <p>Ready to send!</p>
+            <button onclick="sendForm()">Send →</button>
+        </div>
+    </div>
+  </div>
+
+  <footer>© 2025 George Dintwe • All rights reserved.</footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>
