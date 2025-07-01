@@ -16,9 +16,9 @@ Welcome to the source code of my personal portfolio website — a clean, respons
 - **Google Fonts (JetBrains Mono)**
 - **AOS (Animate on Scroll)**
 
-## 📸 Preview
+## Preview
 
-![Portfolio Preview](preview.png)  
+![Portfolio Preview](preview.png.png)  
 
 
 ## 📁 Features
