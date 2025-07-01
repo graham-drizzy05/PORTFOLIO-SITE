@@ -19,7 +19,7 @@ Welcome to the source code of my personal portfolio website — a clean, respons
 ## 📸 Preview
 
 ![Portfolio Preview](preview.png)  
-<sub>(Optional — save a screenshot of your homepage as `preview.png` and add it to the repo root)</sub>
+
 
 ## 📁 Features
 
