@@ -3,7 +3,7 @@
 
 Welcome to the source code of my personal portfolio website — a clean, responsive, one-page design showcasing my skills, projects, and certifications.
 
-## 🚀 Live Site
+Live Site
 
 🔗 [CLICK HERE TO VISIT THE WEBSITE](https://graham-drizzy05.github.io/Portfolio-Site/)
 
