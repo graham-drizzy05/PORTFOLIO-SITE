@@ -1,40 +1,47 @@
+# George Dintwe | Personal Portfolio
 
-# 🌐 George Dintwe — Portfolio Website
+This repository contains the source code for my personal portfolio website. It showcases my projects, technical skills, certifications, and professional experience as a Computer Engineering student and Web Developer.
 
-Welcome to the source code of my personal portfolio website — a clean, responsive, one-page design showcasing my skills, projects, and certifications.
+The portfolio is designed with a clean, responsive layout and modern UI principles, ensuring accessibility and a seamless user experience across all devices. It is deployed globally using AWS services for high performance and secure access.
 
-Live Site
+---
 
-🔗 [CLICK HERE TO VISIT THE WEBSITE](https://graham-drizzy05.github.io/Portfolio-Site/)
+## Live Demo
 
-## 🛠️ Built With
+- **Portfolio Website**: [View Live](http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com)  
+- **Source Code**: [GitHub Repository](https://github.com/graham-drizzy05/PORTFOLIO-SITE)
 
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-- **Font Awesome**
-- **Google Fonts (JetBrains Mono)**
-- **AOS (Animate on Scroll)**
+---
 
-## Preview
+## Features
 
-![Portfolio Preview](preview.png.png)  
+- Responsive design optimized for desktop and mobile
+- Modern typography and clean user interface
+- Smooth section transitions using AOS (Animate On Scroll)
+- Step-by-step modal contact form for seamless inquiries
+- AWS S3 and CloudFront deployment with HTTPS (SSL)
+- Maintains performance and accessibility best practices
 
+---
 
-## 📁 Features
+## Built With
 
-- Responsive layout for desktop & mobile
-- Modal-based contact dialog
-- Smooth scroll navigation
-- Projects, skills, certifications section
-- Email link for requesting resume
-- Easy to customize and extend
+- **Frontend**: HTML5, CSS3, JavaScript (vanilla)
+- **Design Assets**: Google Fonts, Font Awesome
+- **Hosting & Deployment**: AWS S3, CloudFront, Route 53, ACM
 
-## 📦 Getting Started
+---
 
-To edit this website locally:
+## About
 
-1. Clone the repo:
+I am George Dintwe, a Computer Engineering student and current Web Developer intern at Omni Secure. In my role, I collaborate with a remote team to build and maintain client websites, focusing on responsive design, performance optimization, and secure deployment practices. This portfolio reflects my technical skills, attention to detail, and passion for delivering high-quality web solutions.
+
+---
+
+## Getting Started
+
+To view the website locally:
+
+1. Clone the repository
    ```bash
-   git clone https://github.com/graham-drizzy05/portfolio.git 
-   cd portfolio
+   git clone https://github.com/graham-drizzy05/PORTFOLIO-SITE.git
