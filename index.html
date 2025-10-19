@@ -4,441 +4,200 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>George Dintwe | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    :root {
-      --bg: #000;
-      --fg: #e5e5e5;
-      --accent: #00ffe0;
-      --font-mono: 'JetBrains Mono', monospace;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--font-mono);
-      line-height: 1.7;
-      scroll-behavior: smooth;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem;
-      z-index: 100;
-    }
-
-    nav a {
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 0.9rem;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      display: block;
-      height: 1px;
-      width: 0%;
-      background: var(--accent);
-      transition: width 0.3s ease;
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    header {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--accent);
-    }
-
-    header p {
-      margin-top: 1rem;
-      color: #a1a1aa;
-      white-space: pre-line;
-    }
-
-    header .cta {
-      margin-top: 2rem;
-      background: none;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 0.5rem 1.25rem;
-      text-decoration: none;
-      transition:background 0.3s, color 0.3s;
-    }
-
-    header .cta:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    section {
-      max-width: 800px;
-      margin: auto;
-      padding: 6rem 1rem 4rem;
-    }
-
-    section h2 {
-      font-size: 1.5rem;
-      border-bottom: 1px solid var(--accent);
-      margin-bottom: 1.5rem;
-    }
-
-    .grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      margin-top: 1rem;
-    }
-
-    .project-card {
-      background-color: #1a1a1a;
-      padding: 1.5rem;
-      border: 1px solid #333;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px #00ffd1;
-    }
-    
-    a {
-      color: #00ffd1;
-      text-decoration: none;
-      margin-right: 1rem;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-
-    .contact a.download {
-      display: inline-block;
-      margin-top: 1rem;
-      background: none;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 0.5rem 1.25rem;
-      text-decoration: none;
-    }
-
-    .contact a.download:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    .social-icons {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 1.5rem;
-      font-size: 1.5rem;
-    }
-
-    .social-icons a {
-      color: var(--fg);
-      transition: color 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: var(--accent);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      color: #6b7280;
-      font-size: 0.8rem;
-    }
-    .modal {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw; height: 100vh;
-        background: rgba(0,0,0,0.85);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 200;
-    }
-
-    .modal.hidden {
-        display: none;
-    }
-
-    .modal-content {
-        background: #111;
-        color: var(--fg);
-        padding: 2rem;
-        width: 90%;
-        max-width: 400px;
-        border-left: 3px solid var(--accent);
-        position: relative;
-        font-family: var(--font-mono);
-        animation: fadeIn 0.3s ease;
-    }
-
-    .modal-content input,
-    .modal-content textarea {
-        width: 100%;
-        padding: 0.5rem;
-        margin: 1rem 0;
-        background: #000;
-        color: var(--fg);
-        border: 1px solid var(--accent);
-        font-family: var(--font-mono);
-    }
-
-    .modal-content button {
-        background: var(--accent);
-        color: var(--bg);
-        border: none;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-    }
-
-    .modal-content button:hover {
-        background: #00e6c4;
-    }
-
-    .modal-content .close {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        background: none;
-        color: var(--accent);
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    .step {
-        display: none;
-    }
-
-    .step.active {
-        display: block;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.95); }
-        to { opacity: 1; transform: scale(1); }
-    }
-
-    .contact-dialog-btn {
-      background: none;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 0.6rem 1.4rem;
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-      letter-spacing: 0.5px;
-      border-radius: 0;
-    }
-
-    .contact-dialog-btn:hover {
-      background: var(--accent);
-      color: var(--bg);
-      box-shadow: 0 0 10px var(--accent);
-    }
-
-  </style>
+  <link rel="stylesheet" href="styles.css" />
   <script>
-  let currentStep = 1;
 
-  function openModal() {
-    document.getElementById("contactModal").classList.remove("hidden");
-    currentStep = 1;
-    updateSteps();
-  }
+    let currentStep = 1;
 
-  function closeModal() {
-    document.getElementById("contactModal").classList.add("hidden");
-  }
+    function openModal() {
+      document.getElementById("contactModal").classList.remove("hidden");
+      currentStep = 1;
+      updateSteps();
+    }
 
-  function nextStep(step) {
-    currentStep = step + 1;
-    updateSteps();
-  }
+    function closeModal() {
+      document.getElementById("contactModal").classList.add("hidden");
+    }
 
-  function updateSteps() {
-    document.querySelectorAll(".step").forEach((el, i) => {
-      el.classList.toggle("active", i === currentStep - 1);
-    });
-  }
+    function nextStep(step) {
+      currentStep = step + 1;
+      updateSteps();
+    }
 
-  function sendForm() {
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const interest = document.getElementById("interest").value;
-    const message = document.getElementById("message").value;
+    function updateSteps() {
+      document.querySelectorAll(".step").forEach((el, i) => {
+        el.classList.toggle("active", i === currentStep - 1);
+      });
+    }
 
-    const mailto = `mailto:dintwegeorge0@gmail.com?subject=${encodeURIComponent("Inquiry: " + interest)}&body=Hi, my name is ${name} (${email})%0D%0A%0D%0A${message}`;
-    window.location.href = mailto;
-    closeModal();
-  }
+    function sendForm() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const interest = document.getElementById("interest").value;
+      const message = document.getElementById("message").value;
+
+      const mailto = `mailto:dintwegeorge0@gmail.com?subject=${encodeURIComponent("Inquiry: " + interest)}&body=Hi, my name is ${name} (${email})%0D%0A%0D%0A${message}`;
+      window.location.href = mailto;
+      closeModal();
+    }
 </script>
 
 </head>
 <body>
-
-  <nav>
-    <a href="#about">ABOUT</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#skills">SKILLS</a>
-    <a href="#certifications">CERTIFICATIONS</a>
-    <a href="#contact">CONTACT</a>
+  <nav style="position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); border-bottom: 1px solid #e5e5e5; z-index: 1000;">
+    <div style="max-width: 1000px; margin: auto; padding: 1rem 1.5rem; display: flex; justify-content: center; gap: 2rem; font-family: var(--font-sans); font-size: 0.95rem; letter-spacing: 0.5px;">
+      <a href="#about" style="color: var(--accent); text-decoration: none; position: relative;">About</a>
+      <a href="#projects" style="color: var(--accent); text-decoration: none; position: relative;">Projects</a>
+      <a href="#profile" style="color: var(--accent); text-decoration: none; position: relative;">Profile</a>
+      <a href="#contact" style="color: var(--accent); text-decoration: none; position: relative;">Contact</a>
+    </div>
   </nav>
 
   <header>
     <h1>George Dintwe</h1>
-    <p>&gt; Computer Engineering Student<br>&gt; Web Developer | Software Enthusiast</p>
+    <p>Computer Engineering Student · Web Developer · Software Enthusiast · 3D Creative</p>
     <a href="#projects" class="cta">~/see-projects</a>
+    <div class="scroll-down">↓</div>
   </header>
 
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>I’m a driven Computer Engineering student and web developer with hands-on experience building responsive, user-focused websites. Currently freelancing as a Web Developer at Omni Secure, I collaborate with a remote team to design and maintain client projects, enhance site responsiveness, and ensure performance and security. My expertise spans HTML, CSS, JavaScript, WordPress, and web hosting, and I bring a strong eye for clean, modern UI design. With a proven ability to adapt and deliver in fast-paced, remote environments, I’m fueled by a relentless hunger to grow, solve real-world problems, and contribute innovative solutions to forward-thinking teams.</p>
+  <section id="about" data-aos="fade-up" style="max-width: 700px; margin: 6rem auto 4rem; padding: 0 1.5rem;">
 
-  <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-     <div class="grid">
-      <div class="project-card">
-        <h3>In Progress: Financial Literacy & Crypto App</h3>
-        <p>> Built with: <strong>React.js, Tailwind CSS, Node.js, AWS Amplify</strong></p>
-        <br>
-        <p>
-          A modern web application designed to teach financial literacy with a strong focus on empowering the youth to engage with the crypto space responsibly. The platform provides interactive tools and educational content to help young users understand cryptocurrency fundamentals, tax-free savings accounts, and wealth-building strategies. Built with React for a responsive, dynamic UI, Tailwind CSS for sleek design, and Node.js for backend logic. Hosted on AWS Amplify for seamless deployment and scalability.
+    <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--accent); display: inline-block;">About</h2>
+    <p style="font-size: 1.05rem; color: var(--fg); margin-top: 1.5rem; line-height: 1.9;">
+      I'm a driven Computer Engineering student and creative technologist, building responsive websites and 3D interactive projects that merge aesthetic design with technical depth.
+      <br><br>
+      At Omni Secure, I work remotely with a lean dev team to build scalable front-end features and improve UX on client-facing sites. My toolbox includes HTML, CSS, JavaScript, WebGL, and WordPress — but I'm always expanding it.
+      <br><br>
+      I'm currently diving deeper into Python, AWS, and cybersecurity via Cisco NetAcad and AWS Skills Center. My work is fueled by curiosity, minimalism, and the drive to create tools that make knowledge and tech more accessible — especially for young Africans.
+    </p>
+  </section>
+
+  <section id="projects" data-aos="fade-up" style="max-width: 750px; margin: 6rem auto 4rem; padding: 0 1.5rem;">
+    <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--accent); display: inline-block;">Projects</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 4rem;">
+    <!-- PROJECT 1 -->
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem;">Financial Literacy & Crypto App <span style="color: var(--subtle); font-size: 1rem;">(In Progress)</span></h3>
+        <p style="color: var(--subtle); font-size: 0.95rem;">Built with: React.js · Tailwind CSS · Node.js · AWS Amplify</p>
+        <p style="margin-top: 1rem;">
+          A modern web app designed to educate youth on financial literacy with a special focus on crypto. The platform offers interactive tools, learning modules, and tax-free savings strategies. Built for scalability with AWS Amplify and modern front-end tools.
         </p>
-        <br>
-        <p><em>This project is currently under active development.</em></p>
-        <br>
-        <a href="#" class="">Preview Coming Soon</a>
-        <br>
-        <a href="https://github.com/your-github-username/financial-literacy-app" class="">View Code</a>
+
+        <div style="margin-top: 0.75rem;">
+          <a href="#" style="margin-right: 1rem;">🔗 Preview Coming Soon</a>
+          <a href="https://github.com/your-github-username/financial-literacy-app">📂 View Code</a>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>Brick Breaker Game</h3>
-        <p> > Built with: <strong> WebGL, JavaScript</strong></p>
-        <br>
-        <p>A browser-based 3D game leveraging WebGL and GLSL shaders for real-time rendering. Built with HTML5, CSS3, and vanilla JavaScript, this project demonstrates proficiency in low-level graphics programming, shader development, and interactive design. Core mechanics involve 3D object rendering, lighting calculations, and user-driven scene interaction. Optimized for desktop browsers with a modular JavaScript architecture and efficient GPU resource usage. Hosted via AWS S3 Static Website Hosting for seamless web deployment.</p>
-        <br>
-        <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com" class="">Game Preview</a>
-        <br>
-        <a href="https://github.com/graham-drizzy05/BRICK-BREAKER-GAME"  class="">Game Code</a>
+    <!-- PROJECT 2 -->
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem;">Brick Breaker Game</h3>
+        <p style="color: var(--subtle); font-size: 0.95rem;">Built with: WebGL · JavaScript</p>
+        <p style="margin-top: 1rem;">
+          A 3D browser game using WebGL and shaders for real-time graphics. This project demonstrates mastery of low-level rendering, lighting, and GPU-based interaction — all built with vanilla JS and deployed on AWS.
+        </p>
+        <div style="margin-top: 0.75rem;">
+          <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com">🎮 Game Preview</a>
+          <a href="https://github.com/graham-drizzy05/BRICK-BREAKER-GAME">📂 Game Code</a>
+        </div>
+      </div>
+      <!-- PROJECT 3 -->
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem;">Portfolio Website</h3>
+        <p style="color: var(--subtle); font-size: 0.95rem;">Built with: HTML · CSS · JavaScript</p>
+        <p style="margin-top: 1rem;">
+          A sleek, responsive portfolio designed to showcase my skills and projects. Includes smooth animations, a custom modal contact form, and is fully deployed on AWS S3 with global CDN delivery.
+        </p>
+
+        <div style="margin-top: 0.75rem;">
+          <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com">🌐 Portfolio Preview</a>
+          <a href="https://github.com/graham-drizzy05/PORTFOLIO-SITE">📂 Portfolio Code</a>
+        </div>
       </div>
 
-      <div class="project-card">
-          <h3>Portfolio Website</h3>
-            <p> > Built with: <strong> HTML, CSS, JavaScript</strong></p>
-            <br>
-            <p>A sleek, responsive portfolio showcasing my projects, skills, and certifications. Features smooth animations, a modal contact form, and AWS deployment for fast, secure global access.</p>
-            <br>
-            <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com" class="">Portfolio Preview</a>
-            <br>
-            <a href="https://github.com/graham-drizzy05/PORTFOLIO-SITE" class="">Portfolio Code</a>
-      </div>
-      <div class="project-card">
-        <h3>F4 Phantom Space Shooter </h3>
-          <p> > Built with: <strong> Python, PyOpenGL, GLFW, GLSL</strong></p>
-          <br>
-          <p> A 3D space shooter game rendered in real time with custom shaders, procedural missiles, and a textured F-4 Phantom jet. Features include WASD controls, missiles launching, and a dynamic starfield - fully ported from WebGL. 
-            NB: This project needs final touches to be fully functional.</p>
-          <br>
-          <a href="http://f-4phantom-game.s3-website.eu-north-1.amazonaws.com" class="">Game Preview</a>
-          <br>
-          <a href="" target="_blank" class="">Game Code Coming Soon</a>
+      <!-- PROJECT 4 -->
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem;">F‑4 Phantom Space Shooter</h3>
+        <p style="color: var(--subtle); font-size: 0.95rem;">Built with: Python · PyOpenGL · GLSL · GLFW</p>
+        <p style="margin-top: 1rem;">
+          A 3D flight simulator featuring procedural missiles, custom shaders, and a textured F-4 Phantom jet. Includes WASD controls, real-time missile launches, and a dynamic starfield. Ported from WebGL to desktop Python.
+        </p>
+        <div style="margin-top: 0.75rem;">
+          <a href="http://f-4phantom-game.s3-website.eu-north-1.amazonaws.com">🕹️ Game Preview</a>
+          <a href="#">📂 Game Code Coming Soon</a>
+        </div>
       </div>
 
-      
-
-      <div class="project-card"> 
-        <h3>AWS Deployment</h3>
-        <p> > Built with: <strong> Amazon S3, CloudFront, Route 53, ACM</strong></p>
-        <br>
-        <p>Multiple static web applications deployed using AWS infrastructure. Hosted on Amazon S3 for high availability, distributed globally via Amazon CloudFront with HTTPS enabled through AWS Certificate Manager (ACM). This setup ensures secure, low-latency content delivery and demonstrates practical experience with cloud-based web deployment pipelines. </p>
-        <br>
-        <p><strong>Deployed Projects:</strong></p>
-        
-          <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com" class="">Personal Portfolio Website</a>
-          <br>
-          <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com">Brick Breaker Game</a>
-          <br>
-          <a href="http://f-4phantom-game.s3-website.eu-north-1.amazonaws.com" >F‑4 Phantom 3D Simulator</a>
+      <!-- PROJECT 5 -->
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem;">AWS Cloud Deployments</h3>
+        <p style="color: var(--subtle); font-size: 0.95rem;">Built with: S3 · CloudFront · Route 53 · ACM</p>
+        <p style="margin-top: 1rem;">
+          Multiple static websites deployed using AWS S3 and CloudFront. Configured with custom domains, HTTPS, and global distribution — demonstrating practical cloud deployment skills.
+        </p>
+        <div style="margin-top: 0.75rem;">
+          <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com">🌐 Portfolio Website</a>
+          <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com">🎮 Brick Breaker</a>
+          <a href="http://f-4phantom-game.s3-website.eu-north-1.amazonaws.com">🕹️ F‑4 Phantom</a>
+        </div>
       </div>
 
     </div>
   </section>
+  <section id="profile" data-aos="fade-up" style="max-width: 700px; margin: 6rem auto 4rem; padding: 0 1.5rem;">
+    <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--accent); display: inline-block;">Profile Snapshot</h2>
 
-  <section id="skills" data-aos="fade-up">
-    <h2>Skills</h2>
-    <p><strong>Languages:</strong> C, Java, JavaScript, Python (learning)</p>
-    <p><strong>Web Tech:</strong> HTML, CSS, WebGL, WordPress</p>
-    <p><strong>Tools:</strong> Git, VS Code, DevTools</p>
-    <p><strong>Concepts:</strong> OOP, Data Structures, Responsive Design</p>
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem;">🧠 Core Skills</h3>
+        <p><strong>Languages:</strong> C, Java, JavaScript, Python (learning)</p>
+        <p><strong>Web Tech:</strong> HTML, CSS, WebGL, WordPress</p>
+        <p><strong>Tools:</strong> Git, VS Code, DevTools</p>
+        <p><strong>Concepts:</strong> OOP, Data Structures, Responsive Design</p>
+      </div>
+
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem;">🎓 Certifications</h3>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+          <li>AWS Cloud Practitioner Series</li>
+          <li>Computer Foundations (AWS)</li>
+          <li>Intro to Cloud & Generative AI (AWS)</li>
+          <li>Cisco: Cybersecurity, Python Essentials 1 (In Progress)</li>
+          <li>Java Programming · Full Stack Dev · Programming in C</li>
+        </ul>
+      </div>
+
+    </div>
   </section>
+  <section id="contact" data-aos="fade-up" style="max-width: 700px; margin: 6rem auto 4rem; padding: 0 1.5rem;">
+    <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--accent); display: inline-block;">Get in Touch</h2>
 
-  <section id="certifications" data-aos="fade-up">
-    <h2>Certifications</h2>
-    <ul>
-      <li>AWS Cloud Practitioner Series </li>
-      <li>AWS Computer Foundations Series</li>
-      <li>AWS: Introduction to the Cloud; Demystifying Generative AI</li>
-      <li>Cisco: Cybersecurity; Python Essentials 1 (In Progress)</li>
-      <li>Java Programming; Full Stack Dev; Programming in C</li>
-    </ul>
-  </section>
+    <p style="font-size: 1.05rem; margin-bottom: 1.5rem;">
+      I'm open to freelance projects, collaborations, or just talking tech. Feel free to reach out — I usually respond within a day.
+    </p>
 
-  <section id="contact" style="padding: 6rem 1rem;" class="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>✉️ <a href="mailto:dintwegeorge0@gmail.com">dintwegeorge0@gmail.com</a></p>
-    <p>📞 +27 63 399 5000</p>
-    <p>🏡 Cape Town, South Africa</p>
+    <div style="margin-bottom: 1.5rem;">
+      <p>✉️ <a href="mailto:dintwegeorge0@gmail.com" style="color: var(--accent); text-decoration: none;">dintwegeorge0@gmail.com</a></p>
+      <p>📞 <span style="color: var(--subtle);">+27 63 399 5000</span></p>
+      <p>📍 <span style="color: var(--subtle);">Cape Town, South Africa</span></p>
+    </div>
 
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/george-dintwe-217301281" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/graham-drizzy05" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://youtube.com/@himchronicles?si=qlXWaoLowtokWaux"  aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
+    <div style="margin-top: 2rem; display: flex; gap: 1.5rem; font-size: 1.4rem;">
+      <a href="https://www.linkedin.com/in/george-dintwe-217301281" aria-label="LinkedIn" style="color: var(--accent);"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/graham-drizzy05" aria-label="GitHub" style="color: var(--accent);"><i class="fab fa-github"></i></a>
+      <a href="https://youtube.com/@himchronicles?si=qlXWaoLowtokWaux" aria-label="YouTube" style="color: var(--accent);"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div style="margin-top: 2.5rem;">
+      <a href="mailto:dintwegeorge0@gmail.com?subject=Requesting%20Resume&body=Hi%20George..." 
+        style="display: inline-block; padding: 0.6rem 1.4rem; border: 1px solid var(--accent); text-decoration: none; font-size: 1rem; color: var(--accent); transition: all 0.3s;">
+        ✉️ Request Resume
       </a>
     </div>
-    <a href="mailto:dintwegeorge0@gmail.com?subject=Requesting%20Resume&body=Hi%20George..." class="download">Request Resume ✉️</a>
   </section>
 
   <section style="text-align:center; padding: 6rem 1rem;">

@@ -1,0 +1,81 @@
+  :root {
+     --bg: #ffffff;
+     --fg: #1a1a1a;
+     --subtle: #6b7280;
+     --accent: #000000;
+     --font-serif: 'Playfair Display', serif;
+     --font-sans: 'Inter', sans-serif;
+   }
+
+   body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    line-height: 1.8;
+    scroll-behavior: smooth;
+    padding-top: 5rem;
+   }
+   nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 0%;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+   }
+
+   header {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+   }
+
+   header h1 {
+    font-size: 3.2rem;
+    font-family: var(--font-serif);
+    color: var(--accent);
+    margin-bottom: 1rem;
+   }
+
+   header p {
+    font-size: 1.1rem;
+    color: var(--subtle);
+    margin-bottom: 2rem;
+   }
+
+   .scroll-down {
+    font-size: 1.5rem;
+    color: var(--subtle);
+    margin-top: 2rem;
+    animation: bounce 2s infinite;
+   }
+
+   @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+   }
+
+   .cta {
+    border: 1px solid var(--accent);
+    background: none;
+    color: var(--accent);
+    padding: 0.5rem 1.25rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1rem;
+   }
+
+   .cta:hover {
+    background: var(--accent);
+    color: var(--bg);
+   }
