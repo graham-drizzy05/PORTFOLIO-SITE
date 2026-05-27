@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>George Dintwe | Portfolio</title>
+  <title>Itumeleng Dintwe | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,13 +33,16 @@
     nav {
       position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
+      right:0;
       width: 100%;
       background: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
       gap: 1.5rem;
       padding: 1rem;
-      z-index: 100;
+      z-index: 50;
     }
 
     nav a {
@@ -461,12 +465,27 @@
     <a href="#contact">CONTACT</a>
   </nav>
 
-  <header>
-    <h1>Itumeleng Dintwe</h1>
-    <p>Computer Engineering Student <BR>&gt; Web & Automation Developer | Tech-Driven Problem Solver | Cloud Enthusiast | Turning Ideas into Scalable Systems</p>
-    <br>
-    <p>&gt; the mind is the Architect ~ UNKNOWN</p>
-    <a href="#projects" class="cta">~/see-projects</a>
+  <header class= "hero" data-aos="fade-up">
+    <div class="hero-container">
+      <div class="hero-image aspect-square rounded-2xl overflow-hidden bg-white/5 border border-white/10 group-hover:border-red-600/50 transition-all duration-500 ">
+        <img src="ME.jpeg" alt="Itumeleng Dintwe" class="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-500">
+      </div>
+      <div class="hero-content">
+        <h1>Itumeleng Dintwe</h1>
+        <p class="subtitle"> Computer Engineering Student <br> 
+          &gt; Web Developer | Automation Architect | Cloud Enthusiast | Turning Ideas into Scalable Systems 
+        </p>
+
+        <br>
+
+        <p class="qoute"> 
+          &gt; the mind is the Architect ~ UNKNOWN
+        </p>
+
+        <a href="#projects" class="cta">~/see-projects</a>
+      </div>
+    </div>
+    
   </header>
 
   <section id="about" data-aos="fade-up">
@@ -540,19 +559,38 @@
     <h2>Projects</h2>
      <div class="grid">
       <div class="project-card">
-        <h3>In Progress: WealthWise App</h3>
-        <p>Built with: <strong>Flutter, Dart, Firebase, AWS Amplify</strong></p>
+        <h3>Synflow – Web Development & AI Automation Agency Website</h3>
+        <p>Built with: <strong>HTML, CSS, JavaScript, UI/UX Design</strong></p>
         <br>
         <p>
-          A modern cross-platform app teaching financial literacy through interactive lessons, quizzes, and budgeting tools. Features include user authentication, progress tracking, and personalized learning paths. Built with Flutter for seamless deployment across iOS, Android, and web. Aims to empower users with essential money management skills.
+          Designed and developed the official website for Synflow, a web development and AI automation agency.
+          Focused on modern UI/UX, performance optimization, and clear brand positioning for client acquisition.
+          The platform serves as a digital identity and business showcase for agency services.
         </p>
-        <br>
-        <p><em>This project is currently under active development.</em></p>
-        <br>
-        <a href="#" class="">Preview Coming Soon</a>
-        <br>
-        <a href="https://github.com/your-github-username/financial-literacy-app" class="">View Code</a>
       </div>
+
+      <div class="project-card">
+        <h3>Client Web Development – Omni Secure</h3>
+        <p>Built with: <strong>HTML, CSS, JavaScript, WordPress</strong></p>
+        <br>
+        <p>
+          Developed and maintained responsive websites for clients while working remotely at Omni Secure.
+          Responsibilities include UI implementation, performance optimization, domain/email management,
+          and ongoing site maintenance to ensure security and reliability.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Automation Systems – ProudlyAssociated</h3>
+        <p>Built with: <strong>Python, n8n, Web Automation Workflows</strong></p>
+        <br>
+        <p>
+          Built Python-based automation workflows integrated with n8n to streamline data collection and content pipelines.
+          Focus includes crypto intelligence gathering, workflow orchestration, automated publishing,
+          and backend process optimization for digital media operations.
+        </p>
+      </div>
+
       <div class="project-card">
         <h3>Brick Breaker Game</h3>
         <p>Built with: <strong> WebGL, JavaScript</strong></p>
@@ -561,6 +599,7 @@
         <br>
         <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com" class="">Game Preview</a>
       </div>
+
       <div class="project-card">
           <h3>Portfolio Website</h3>
             <p>Built with: <strong> HTML, CSS, JavaScript</strong></p>
@@ -569,15 +608,7 @@
             <br>
             <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com" class="">Portfolio Preview</a>
       </div>
-      <div class="project-card">
-        <h3>F4 Phantom Space Shooter </h3>
-          <p>Built with: <strong> Python, PyOpenGL, GLFW, GLSL</strong></p>
-          <br>
-          <p> A 3D space shooter game rendered in real time with custom shaders, procedural missiles, and a textured F-4 Phantom jet. Features include WASD controls, missiles launching, and a dynamic starfield - fully ported from WebGL. 
-            NB: This project needs final touches to be fully functional.</p>
-          <br>
-          <a href="http://f-4phantom-game.s3-website.eu-north-1.amazonaws.com" class="">Game Preview</a>
-      </div>
+      
       <div class="project-card"> 
         <h3>AWS Deployment</h3>
         <p>Built with: <strong> Amazon S3, CloudFront, Route 53, ACM</strong></p>
@@ -592,6 +623,7 @@
         <a href="http://f-4phantom-game.s3-website.eu-north-1.amazonaws.com" >F‑4 Phantom 3D Simulator</a>
       </div>
     </div>
+
     <div style=" text-align: center;">
       <div class="github-link">
         <a href="https://github.com/graham-drizzy05" class="primary-btn">
@@ -601,96 +633,86 @@
     </div>
   </section>
 
-  <section id="contact" style="padding: 6rem 1rem;" class="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <div class="contact-container">
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fas fa-envelope"></i>
+   <section id="contact" class="py-24 px-6 bg-white/5 backdrop-blur-sm">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-24 fade-in">
+                <h2 class="text-5xl font-bold mb-6">Get In Touch</h2>
+                <p class="text-xl text-gray-300">Ready to build something amazing? Let's talk.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="glass p-12 rounded-3xl fade-in">
+                    <h3 class="text-3xl font-bold mb-12">Quick Contact</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4 p-4 bg-white/5 rounded-2xl">
+                            <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Call or WhatsApp</p>
+                                <a href="tel:+27633995000" class="font-bold text-xl hover:text-red-400 transition-colors">063 399 5000</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 bg-white/5 rounded-2xl">
+                            <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Email</p>
+                                <a href="mailto:georgedintwe@outlook.com" class="font-bold text-xl hover:text-red-400 transition-colors break-all">georgedintwe@outlook.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 bg-white/5 rounded-2xl">
+                          <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-linkedin"></i>
+                          </div>
+                          <div>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/george-dintwe-217301281">ITUMELENG DINTWE</a></p>
+                          </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 bg-white/5 rounded-2xl">
+                          <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-github"></i>
+                          </div>
+                          <div>
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/graham-drizzy05">graham-drizzy05</a></p>
+                          </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 bg-white/5 rounded-2xl">
+                          <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-youtube"></i>
+                          </div>
+                          <div>
+                            <h3>YouTube</h3>
+                            <p><a href="https://www.youtube.com/channel/UCGaPn65D0J4Zv1J1J1J1J1J">HIMchronicles</a></p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-12 rounded-3xl fade-in">
+                  <h3 class="text-3xl font-bold mb-12">Let's Collaborate!</h3>
+                    <form action="https://formspree.io/f/mvzvnrvo" method="POST" id="contact-form" class="space-y-6">
+                        <div>
+                            <input type="text" name="name" placeholder="Your Name" class="w-full p-6 rounded-2xl bg-white/10 border border-white/20 focus:border-red-400 focus:outline-none text-white placeholder-gray-400 transition-all" required>
+                        </div>
+                        <div>
+                            <input type="email" name="_replyto" placeholder="Your Email" class="w-full p-6 rounded-2xl bg-white/10 border border-white/20 focus:border-red-400 focus:outline-none text-white placeholder-gray-400 transition-all" required>
+                        </div>
+                        <div>
+                            <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-6 rounded-2xl bg-white/10 border border-white/20 focus:border-red-400 focus:outline-none text-white placeholder-gray-400 transition-all resize-vertical" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-xl font-bold py-6 px-8 rounded-2xl hover-lift shadow-xl transition-all duration-300">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-3 text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="contact-text">
-          <h3>Email</h3>
-          <p><a href="mailto:dintwegeorge0@gmail.com"></a>dintwegeorge0@gmail.com</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fas fa-phone"></i>
-        </div>
-        <div class="contact-text">
-          <h3>Phone</h3>
-          <p><a href="tel:+2763399500">+27 63 399 5000</a></p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fab fa-linkedin"></i>
-        </div>
-        <div class="contact-text">
-          <h3>LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/george-dintwe-217301281">GEORGE ITUMELENG DINTWE</a></p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <i class="fab fa-github"></i>
-        </div>
-        <div class="contact-text">
-          <h3>GitHub</h3>
-          <p><a href="https://github.com/graham-drizzy05 " >GRAHAM-DRIZZY05</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-icon">
-        <i class="fab fa-youtube"></i>
-      </div>
-      <div class="contact-text">
-        <h3>YouTube</h3>
-        <p><a href="https://youtube.com/@himchronicles?si=qlXWaoLowtokWaux" aria-label="YouTube">HIM Chronicles</a></p>
-    </div>
-  </section>
+    </section>
 
-  <section style="text-align:center; padding: 6rem 1rem;">
-    <h2>Let's Collaborate!</h2>
-    <button class="contact-dialog-btn" onclick="openModal()">✉️ Get in Touch</button>
-  </section>
-
-  <div id="contactModal" class="modal hidden" style="text-align:center">
-    <div class="modal-content">
-        <button class="close" onclick="closeModal()">×</button>
-
-        <div class="step step-1 active">
-            <h3>STEP 1/4</h3>
-            <p>Hi, my name is</p>
-            <input type="text" id="name" placeholder="Your name" />
-            <p>and my email is</p>
-            <input type="email" id="email" placeholder="you@example.com" />
-            <button onclick="nextStep(1)">Next</button>
-        </div>
-
-        <div class="step step-2">
-            <h3>STEP 2/4</h3>
-            <p>I'm interested in</p>
-            <input type="text" id="interest" placeholder="e.g. portfolio, web app..." />
-            <button onclick="nextStep(2)">Next</button>
-        </div>
-        <div class="step step-3">
-            <h3>STEP 3/4</h3>
-            <p>Here’s what I need help with:</p>
-            <textarea id="message" placeholder="Describe your idea or request..."></textarea>
-            <button onclick="nextStep(3)">Next</button>
-        </div>
-        <div class="step step-4">
-            <h3>STEP 4/4</h3>
-            <p>Ready to send!</p>
-            <button onclick="sendForm()">Send →</button>
-        </div>
-    </div>
-  </div>
-
-  <footer>© 2025 George Itumeleng Dintwe • All rights reserved.</footer>
+  <footer>© 2026 Itumeleng Dintwe • All rights reserved.</footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
