@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Itumeleng Dintwe | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #000;
       --fg: #e5e5e5;
       --accent: #00ffe0;
-      --font-mono: 'JetBrains Mono', monospace;
     }
 
     * {
@@ -22,11 +26,9 @@
       box-sizing: border-box;
     }
 
-    body {
-      background: var(--bg);
+    body { background: var(--bg);
       color: var(--fg);
-      font-family: var(--font-mono);
-      line-height: 1.7;
+      font-family: 'Alumni Sans', sans-serif;
       scroll-behavior: smooth;
     }
 
@@ -44,69 +46,14 @@
       z-index: 50;
     }
 
-    nav a {
-      color: var(--fg);
-      text-decoration: none;
-      font-size: 0.9rem;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      display: block;
-      height: 1px;
-      width: 0%;
-      background: var(--accent);
-      transition: width 0.3s ease;
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-    }
-
     nav a:hover::after {
       width: 100%;
     }
 
-    header {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--accent);
-    }
-
-    header p {
-      margin-top: 1rem;
-      color: #a1a1aa;
-      white-space: pre-line;
-    }
-
-    header .cta {
-      margin-top: 2rem;
-      background: none;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 0.5rem 1.25rem;
-      text-decoration: none;
-      transition:background 0.3s, color 0.3s;
-    }
-
-    header .cta:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
     section {
-      max-width: 800px;
+      max-width: 950px;
       margin: auto;
-      padding: 6rem 1rem 4rem;
+      padding: 8rem 2rem 6rem;
     }
 
     section h2 {
@@ -454,94 +401,113 @@
 </script>
 
 </head>
-<body>
+<body class="gradient-bg text-white overflow-x-hidden">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300 bg-grey">
+        <div class="max-w-6xl mx-auto flex items-center justify-between"></div>
+            <div class="text-2xl hidden md:flex items-center space-x-6">
+                <a href="#about" class="block py-2 hover:text-[#00ffd1] font-bold">About</a>
+                <a href="#experience" class="hover:text-[#00ffd1] transition-colors font-bold">Experience</a>
+                <a href="#skills" class="hover:text-[#00ffd1] transition-colors font-bold">Skills</a>
+                <a href="#projects" class="hover:text-[#00ffd1] transition-colors font-bold">Projects</a>
+                <a href="#contact" class="hover:text-[#00ffd1] transition-colors font-bold">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-toggle" class="text-3xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+                <a href="#about" class="block py-2 hover:text-[#00ffd1] ">About</a>
+                <a href="#experience" class="block py-2 hover:text-[#00ffd1] ">Experience</a>
+                <a href="#skills" class="block py-2 hover:text-[#00ffd1] ">Skills</a>
+                <a href="#projects" class="block py-2 hover:text-[#00ffd1] ">Projects</a>
+                <a href="#contact" class="block py-2 hover:text-[#00ffd1] ">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section class= "hero relative min-h-screen flex items-center pt-24 pb-20 px-6 overflow-hidden" data-aos="fade-up">
+        <div class="max-w-5xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
 
-  <nav>
-    <a href="#about">ABOUT</a>
-    <a href="#experience">EXPERIENCE</a>
-    <a href="#skills">SKILLS</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-
-  <header class= "hero" data-aos="fade-up">
-    <div class="hero-container">
-      <div class="hero-image aspect-square rounded-2xl overflow-hidden bg-white/5 border border-white/10 group-hover:border-red-600/50 transition-all duration-500 ">
-        <img src="ME.jpeg" alt="Itumeleng Dintwe" class="w-full h-full object-cover">
-      </div>
-      <div class="hero-content">
-        <span class="text-gray-400  tracking-widest text-sm font-semibold mb-6 block">
-          coding clarity into every line, one project at a time.
-        </span>
-        <h1>Itumeleng Dintwe</h1>
-        <p class="subtitle"> Computer Engineering Student <br> 
-          &gt; Web Developer | Automation Architect | Cloud Enthusiast | Turning Ideas into Scalable Systems 
-        </p>
-
-        <br>
-
-        <p class="quote"> 
-          &gt; the mind is the Architect ~ UNKNOWN
-        </p>
-
-        <a href="#projects" class="cta">~/see-projects</a>
-      </div>
-    </div>
+            <div class="fade-in">
+                <h1 class="text-6xl md:text-4xl lg:text-6xl font-black leading-tight mb-8 text-white">Itumeleng Dintwe</h1>
+                <p class="text-xl md:text-2xl text-white max-w-xl mb-12 leading-relaxed"> Computer Engineering Student <br> 
+                    &gt; Web Developer | Automation Architect | Cloud Enthusiast | Turning Ideas into Scalable Systems 
+                </p>
+                <br>
+                <p class="text-lg md:text-2xl text-white max-w-xl mb-12 leading-relaxed"> 
+                    "the mind is the Architect" - UNKNOWN
+                </p>
+                <div class="flex gap-6">
+                    <a href="#projects" class="inline-block bg-white hover:bg-gray-200 text-[#0B1A3A] font-bold px-14 py-4 rounded-2xl transition-all duration-300 shadow-lg">/see-projects</a>
+                </div>
+            </div>
+            <div class="relative mt-12 lg:mt-0">
+                <div class="relative w-full h-[250px] md:h-[350px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                    <img src="ME.jpeg" alt="Itumeleng Dintwe" class="w-full h-full object-cover object-center">
+                    <div class="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#050a18] via-transparent to-transparent"></div>
+                    <div class="lg:hidden absolute inset-0 bg-gradient-to-b from-[#050a18] via-transparent to-transparent"></div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-red-900/10 rounded-full blur-[120px] animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+        </div>
     
-  </header>
-
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>I’m a third-year Computer Engineering student and web developer with hands-on experience building responsive, user-focused websites and automation workflows. I currently work remotely at <strong>Omni Secure</strong> as a Web Developer and IT Support, collaborating with a team to design and maintain client projects, enhance site performance, manage domains and email systems, and ensure security. I also contribute at <strong>ProudlyAssociated</strong> as a Web Developer & Automation Consultant, developing Python-based data collection workflows with <strong>n8n</strong>, maintaining websites, performing backups, security scans, and managing content publishing.</p>
-    <p>My technical expertise spans HTML, CSS, JavaScript, WordPress, WebGL, Python, automation, and cloud-aware development with AWS. I have a strong eye for clean, modern UI design and thrive in fast-paced, remote environments where I can solve real-world problems and deliver innovative solutions.</p>
-    <p>Passionate about creating intuitive, engaging web experiences and automation solutions, I continually seek to learn new skills and technologies to enhance my craft and contribute to forward-thinking teams and projects.</p>
     </section>
 
-  <section id="experience" data-aos="fade-up">
-    <h2>Professional Experience</h2>
+    <section id="about" class="py-24 px-2">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl text-white text-left-align font-bold mb-12">About Me</h2>
+            <p class="text-4xl md:text-xl text-white font-medium text-left-align mb-12 leading-relaxed">I’m a third-year Computer Engineering student and web developer with hands-on experience building responsive, user-focused websites and automation workflows. I currently work remotely at <strong>Omni Secure</strong> as a Web Developer and IT Support, collaborating with a team to design and maintain client projects, enhance site performance, manage domains and email systems, and ensure security. I also contribute at <strong>ProudlyAssociated</strong> as a Web Developer & Automation Consultant, developing Python-based data collection workflows with <strong>n8n</strong>, maintaining websites, performing backups, security scans, and managing content publishing.</p>
+            <p class="text-4xl md:text-xl text-white font-medium text-left-align mb-12 leading-relaxed">My technical expertise spans HTML, CSS, JavaScript, WordPress, WebGL, Python, automation, and cloud-aware development with AWS. I have a strong eye for clean, modern UI design and thrive in fast-paced, remote environments where I can solve real-world problems and deliver innovative solutions.
+                Passionate about creating intuitive, engaging web experiences and automation solutions, I continually seek to learn new skills and technologies to enhance my craft and contribute to forward-thinking teams and projects.
+            </p>
+        </div>
+    </section>
+
+  <section id="experience" class="py-24 px-6">
+    <h2 class="text-4xl text-white text-left-align font-bold mb-12">Professional Experience</h2>
     <div class="">
-      <h3>Web Developer & IT Support Technician – Omni Secure</h3>
-      <p><em>June 2024 – Present | Remote</em></p>
-      <ul>
-        <li>Design, develop, and maintain responsive websites using HTML, CSS, JavaScript, and WordPress.</li>
-        <li>Collaborate with a remote team to gather client requirements and deliver tailored web solutions.</li>
-        <li>Optimize website performance, ensuring fast load times and seamless user experiences across devices.</li>
-        <li>Implement IT support functions, managing domains and email systems to maintain operational stability.</li>
-        <li>Perform ongoing website maintenance, updates, and troubleshooting to ensure reliability and security.</li>
+      <h3 class="text-2xl font-bold mb-6">Web Developer & IT Support Technician – Omni Secure</h3>
+      <p class="text-xl text-white-500 mb-4"><em>June 2024 – Present | Remote</em></p>
+      <ul class="text-xl space-y-3 text-white-500 mb-8">
+        <li> - Design, develop, and maintain responsive websites using HTML, CSS, JavaScript, and WordPress.</li>
+        <li> - Collaborate with a remote team to gather client requirements and deliver tailored web solutions.</li>
+        <li> - Optimize website performance, ensuring fast load times and seamless user experiences across devices.</li>
+        <li> - Implement IT support functions, managing domains and email systems to maintain operational stability.</li>
+        <li> - Perform ongoing website maintenance, updates, and troubleshooting to ensure reliability and security.</li>
       </ul>
     </div>
     <br>
     <div class="">
-      <h3>Web Developer & Automation Consultant – ProudlyAssociated</h3>
-      <p><em>August 2025 – Present | Remote</em></p>
-      <ul>
-        <li>Built and revamped multiple websites to enhance performance, UX, and brand consistency.</li>
-        <li>Performed daily backups and security scans to detect bugs, vulnerabilities, and potential attacks.</li>
-        <li>Managed content publishing workflows, including video uploads for digital media outreach.</li>
-        <li>Developed Python-based data collection automation workflows, orchestrated using <strong>n8n</strong>, to streamline crypto intelligence gathering.</li>
-        <li>Collaborated on scalable web, backend, and media automation solutions to support platform growth.</li>
+      <h3 class="text-2xl font-bold mb-6">Web Developer & Automation Consultant – ProudlyAssociated</h3>
+      <p class="text-xl text-white-500 mb-4"><em>August 2025 – Present | Remote</em></p>
+      <ul class="text-xl space-y-3 text-white-500 mb-8">
+        <li> - Built and revamped multiple websites to enhance performance, UX, and brand consistency.</li>
+        <li> - Performed daily backups and security scans to detect bugs, vulnerabilities, and potential attacks.</li>
+        <li> - Managed content publishing workflows, including video uploads for digital media outreach.</li>
+        <li> - Developed Python-based data collection automation workflows, orchestrated using <strong>n8n</strong>, to streamline crypto intelligence gathering.</li>
+        <li> - Collaborated on scalable web, backend, and media automation solutions to support platform growth.</li>
       </ul>
     </div>
   </section>
 
   <section id="skills" data-aos="fade-up">
     <div class="section-title">
-        <h2>Skills</h2>
+        <h2 class="text-4xl text-white text-left-align font-bold mb-12">Skills</h2>
     </div>
     <div class="skills-container">
       <!-- Programming Languages -->
-      <div class="skill-item"><i class="fas fa-microchip"></i> C Programming</div>
       <div class="skill-item"><i class="fab fa-python"></i> Python</div>
       <div class="skill-item"><i class="fab fa-java"></i> Java</div>
       <div class="skill-item"><i class="fas fa-cogs"></i> Object-Oriented Programming</div>
       <div class="skill-item"><i class="fas fa-cogs"></i> Procedural Programming</div>
       <div class="skill-item"><i class="fas fa-lightbulb"></i> Algorithmic Thinking</div>
-      <div class="skill-item"><i class="fas fa-brain"></i> Analytical Thinking</div>
-
+      <div class="skill-item"><i class="fas fa-brain"></i> Analytical Thinking</div><br>
       <!-- Web & Cloud Technologies -->
       <div class="skill-item"><i class="fab fa-html5"></i> HTML & CSS</div> 
       <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>       
-      <div class="skill-item"><i class="fas fa-cube"></i> WebGL</div>
       <div class="skill-item"><i class="fab fa-wordpress"></i> WordPress</div>
       <div class="skill-item"><i class="fas fa-cloud"></i> AWS (S3, CloudFront)</div>
       <div class="skill-item"><i class="fas fa-laptop-code"></i> Responsive Web Design</div>
@@ -558,35 +524,39 @@
 
   <section id="projects" data-aos="fade-up">
 
-    <h2>Projects</h2>
+    <h2 class="text-4xl text-white text-left-align font-bold mb-12">Projects</h2>
      <div class="grid">
       <div class="project-card">
-        <h3>Synflow – Web Development & AI Automation Agency Website</h3>
-        <p>Built with: <strong>HTML, CSS, JavaScript, UI/UX Design</strong></p>
+        <h3 class="text-3xl font-bold mb-6">Synflow – Web Development & AI Automation Agency Website</h3>
+        <p class="text-xl space-y-3 text-white-500 mb-8">Built with: <strong>HTML, CSS, JavaScript, UI/UX Design</strong></p>
         <br>
-        <p>
+        <p class="text-xl space-y-3 text-white-500 mb-8">
           Designed and developed the official website for Synflow, a web development and AI automation agency.
           Focused on modern UI/UX, performance optimization, and clear brand positioning for client acquisition.
           The platform serves as a digital identity and business showcase for agency services.
         </p>
+        <br>
+        <a href="https://synflow-official-pearl.vercel.app" class="text-xl text-[#00ffd1] font-semibold hover:text-white">Synflow Website</a>
       </div>
 
       <div class="project-card">
-        <h3>Client Web Development – Omni Secure</h3>
-        <p>Built with: <strong>HTML, CSS, JavaScript, WordPress</strong></p>
+        <h3 class="text-3xl font-bold mb-6">Client Web Development – Omni Secure</h3>
+        <p class="text-xl space-y-3 text-white-500 mb-8">Built with: <strong>HTML, CSS, JavaScript, WordPress</strong></p>
         <br>
-        <p>
+        <p class="text-xl space-y-3 text-white-500 mb-8">
           Developed and maintained responsive websites for clients while working remotely at Omni Secure.
           Responsibilities include UI implementation, performance optimization, domain/email management,
           and ongoing site maintenance to ensure security and reliability.
         </p>
+        <br>
+        <a href="https://omnisecure.co.za" class="text-xl text-[#00ffd1] font-semibold hover:text-white">Omni Secure Website</a>
       </div>
 
       <div class="project-card">
-        <h3>Automation Systems – ProudlyAssociated</h3>
-        <p>Built with: <strong>Python, n8n, Web Automation Workflows</strong></p>
+        <h3 class="text-3xl font-bold mb-6">Automation Systems – ProudlyAssociated</h3>
+        <p class="text-xl space-y-3 text-white-500 mb-8">Built with: <strong>Python, n8n, Web Automation Workflows</strong></p>
         <br>
-        <p>
+        <p class="text-xl space-y-3 text-white-500 mb-8">
           Built Python-based automation workflows integrated with n8n to streamline data collection and content pipelines.
           Focus includes crypto intelligence gathering, workflow orchestration, automated publishing,
           and backend process optimization for digital media operations.
@@ -594,35 +564,35 @@
       </div>
 
       <div class="project-card">
-        <h3>Brick Breaker Game</h3>
-        <p>Built with: <strong> WebGL, JavaScript</strong></p>
+        <h3 class="text-3xl font-bold mb-6">Brick Breaker Game</h3>
+        <p class="text-xl space-y-3 text-white-500 mb-8">Built with: <strong> WebGL, JavaScript</strong></p>
         <br>
-        <p>A browser-based 3D game using WebGL and GLSL for real-time rendering. Demonstrates proficiency in low-level graphics, shaders, and interactive design, with optimized GPU use and modular JavaScript. Hosted on AWS S3.</p>
+        <p class="text-xl space-y-3 text-white-500 mb-8">A browser-based 3D game using WebGL and GLSL for real-time rendering. Demonstrates proficiency in low-level graphics, shaders, and interactive design, with optimized GPU use and modular JavaScript. Hosted on AWS S3.</p>
         <br>
-        <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com" class="">Game Preview</a>
+        <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com" class="text-xl text-[#00ffd1] font-semibold hover:text-white">Game Preview</a>
       </div>
 
       <div class="project-card">
-          <h3>Portfolio Website</h3>
-            <p>Built with: <strong> HTML, CSS, JavaScript</strong></p>
+          <h3 class="text-3xl font-bold mb-6">Portfolio Website</h3>
+            <p class="text-xl space-y-3 text-white-500 mb-8">Built with: <strong> HTML, CSS, JavaScript</strong></p>
             <br>
-            <p>A sleek, responsive portfolio showcasing my projects, skills, and certifications. Features smooth animations, a modal contact form, and AWS deployment for fast, secure global access.</p>
+            <p class="text-xl space-y-3 text-white-500 mb-8">A sleek, responsive portfolio showcasing my projects, skills, and certifications. Features smooth animations, a modal contact form, and AWS deployment for fast, secure global access.</p>
             <br>
-            <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com" class="">Portfolio Preview</a>
+            <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com" class="text-xl text-[#00ffd1] font-semibold hover:text-white">Portfolio Preview</a>
       </div>
       
       <div class="project-card"> 
-        <h3>AWS Deployment</h3>
-        <p>Built with: <strong> Amazon S3, CloudFront, Route 53, ACM</strong></p>
+        <h3 class="text-3xl font-bold mb-6">AWS Deployment</h3>
+        <p class="text-xl space-y-3 text-white-500 mb-8">Built with: <strong> Amazon S3, CloudFront, Route 53, ACM</strong></p>
         <br>
-        <p>Multiple static web applications deployed using AWS infrastructure. Hosted on Amazon S3 for high availability, distributed globally via Amazon CloudFront with HTTPS enabled through AWS Certificate Manager (ACM). This setup ensures secure, low-latency content delivery and demonstrates practical experience with cloud-based web deployment pipelines. </p>
+        <p class="text-xl space-y-3 text-white-500 mb-8">Multiple static web applications deployed using AWS infrastructure. Hosted on Amazon S3 for high availability, distributed globally via Amazon CloudFront with HTTPS enabled through AWS Certificate Manager (ACM). This setup ensures secure, low-latency content delivery and demonstrates practical experience with cloud-based web deployment pipelines. </p>
         <br>
-        <p><strong>Deployed Projects:</strong></p>
-        <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com" class="">Personal Portfolio Website</a>
+        <p class="text-xl space-y-1 text-white-500 mb-8"><strong>Deployed Projects:</strong></p>
+        <a href="http://george-portfolio-site.s3-website.eu-north-1.amazonaws.com" class="text-xl text-[#00ffd1] font-semibold hover:text-white">Personal Portfolio Website</a>
         <br>
-        <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com">Brick Breaker Game</a>
+        <a href="http://brick-breaker-game.s3-website.eu-north-1.amazonaws.com" class="text-xl text-[#00ffd1] font-semibold hover:text-white">Brick Breaker Game</a>
         <br>
-        <a href="http://f-4phantom-game.s3-website.eu-north-1.amazonaws.com" >F‑4 Phantom 3D Simulator</a>
+        <a href="http://f-4phantom-game.s3-website.eu-north-1.amazonaws.com" class="text-xl text-[#00ffd1] font-semibold hover:text-white">F‑4 Phantom 3D Simulator</a>
       </div>
     </div>
 
@@ -636,15 +606,16 @@
   </section>
 
    <section id="contact" class="py-24 px-6 bg-white/5 backdrop-blur-sm">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-24 fade-in">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-26 fade-in">
                 <h2 class="text-5xl font-bold mb-6">Get In Touch</h2>
                 <p class="text-xl text-gray-300">Ready to build something amazing? Let's talk.</p>
             </div>
-            <div class="grid lg:grid-cols-2 gap-12">
+            <br>
+            <div class="grid lg:grid-cols-2 gap-10">
                 <div class="glass p-12 rounded-3xl fade-in">
                     <h3 class="text-3xl font-bold mb-12">Quick Contact</h3>
-                    <div class="space-y-6">
+                    <div class="space-y-2">
                         <div class="flex items-center space-x-4 p-4 bg-white/5 rounded-2xl">
                             <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
                                 <i class="fas fa-phone text-xl"></i>
@@ -660,7 +631,7 @@
                             </div>
                             <div>
                                 <p class="text-gray-400 text-sm">Email</p>
-                                <a href="mailto:georgedintwe@outlook.com" class="font-bold text-xl hover:text-red-400 transition-colors break-all">georgedintwe@outlook.com</a>
+                                <a href="mailto:georgedintwe@outlook.com" class="font-bold text-lg hover:text-red-400 transition-colors break-all">georgedintwe@outlook.com</a>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4 p-4 bg-white/5 rounded-2xl">
@@ -686,13 +657,14 @@
                             <i class="fab fa-youtube"></i>
                           </div>
                           <div>
-                            <h3>YouTube</h3>
+                            <h4>YouTube</h4>
                             <p><a href="https://www.youtube.com/channel/UCGaPn65D0J4Zv1J1J1J1J1J">HIMchronicles</a></p>
                           </div>
                         </div>
                     </div>
                 </div>
-                <div class="glass p-12 rounded-3xl fade-in">
+                <div class="glass p-25 rounded-3xl fade-in" gap-6>
+                    <br><br>
                   <h3 class="text-3xl font-bold mb-12">Let's Collaborate!</h3>
                     <form action="https://formspree.io/f/mvzvnrvo" method="POST" id="contact-form" class="space-y-6">
                         <div>
@@ -704,7 +676,7 @@
                         <div>
                             <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-6 rounded-2xl bg-white/10 border border-white/20 focus:border-red-400 focus:outline-none text-white placeholder-gray-400 transition-all resize-vertical" required></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-xl font-bold py-6 px-8 rounded-2xl hover-lift shadow-xl transition-all duration-300">
+                        <button type="submit" class="w-full bg-gradient-to-r from-[#00ffd1] to-grey-600 hover:from-[#00ffd1] hover:to-[#00ffd1] text-xl font-bold py-6 px-8 rounded-2xl hover-lift shadow-xl transition-all duration-300">
                             Send Message
                             <i class="fas fa-paper-plane ml-3 text-sm"></i>
                         </button>
