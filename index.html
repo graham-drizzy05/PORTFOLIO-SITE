@@ -32,24 +32,6 @@
       scroll-behavior: smooth;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem;
-      z-index: 50;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
     section {
       max-width: 950px;
       margin: auto;
@@ -60,6 +42,13 @@
       font-size: 1.5rem;
       border-bottom: 1px solid var(--accent);
       margin-bottom: 1.5rem;
+    }
+    nav {
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
     }
 
     #skills {
@@ -364,41 +353,6 @@
     }
 
   </style>
-  <script>
-  let currentStep = 1;
-
-  function openModal() {
-    document.getElementById("contactModal").classList.remove("hidden");
-    currentStep = 1;
-    updateSteps();
-  }
-
-  function closeModal() {
-    document.getElementById("contactModal").classList.add("hidden");
-  }
-
-  function nextStep(step) {
-    currentStep = step + 1;
-    updateSteps();
-  }
-
-  function updateSteps() {
-    document.querySelectorAll(".step").forEach((el, i) => {
-      el.classList.toggle("active", i === currentStep - 1);
-    });
-  }
-
-  function sendForm() {
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const interest = document.getElementById("interest").value;
-    const message = document.getElementById("message").value;
-
-    const mailto = `mailto:dintwegeorge0@gmail.com?subject=${encodeURIComponent("Inquiry: " + interest)}&body=Hi, my name is ${name} (${email})%0D%0A%0D%0A${message}`;
-    window.location.href = mailto;
-    closeModal();
-  }
-</script>
 
 </head>
 <body class="gradient-bg text-white overflow-x-hidden">
@@ -457,10 +411,10 @@
     </section>
 
     <section id="about" class="py-24 px-2">
-        <div class="max-w-5xl mx-auto">
+        <div class="max-w-5xl mx-auto sm:text-base">
             <h2 class="text-4xl text-white text-left-align font-bold mb-12">About Me</h2>
-            <p class="text-4xl md:text-xl text-white font-medium text-left-align mb-12 leading-relaxed">I’m a third-year Computer Engineering student and web developer with hands-on experience building responsive, user-focused websites and automation workflows. I currently work remotely at <strong>Omni Secure</strong> as a Web Developer and IT Support, collaborating with a team to design and maintain client projects, enhance site performance, manage domains and email systems, and ensure security. I also contribute at <strong>ProudlyAssociated</strong> as a Web Developer & Automation Consultant, developing Python-based data collection workflows with <strong>n8n</strong>, maintaining websites, performing backups, security scans, and managing content publishing.</p>
-            <p class="text-4xl md:text-xl text-white font-medium text-left-align mb-12 leading-relaxed">My technical expertise spans HTML, CSS, JavaScript, WordPress, WebGL, Python, automation, and cloud-aware development with AWS. I have a strong eye for clean, modern UI design and thrive in fast-paced, remote environments where I can solve real-world problems and deliver innovative solutions.
+            <p class="text-2xl text-white font-medium text-left-align mb-12 leading-relaxed">I’m a third-year Computer Engineering student and web developer with hands-on experience building responsive, user-focused websites and automation workflows. I currently work remotely at <strong>Omni Secure</strong> as a Web Developer and IT Support, collaborating with a team to design and maintain client projects, enhance site performance, manage domains and email systems, and ensure security. I also contribute at <strong>ProudlyAssociated</strong> as a Web Developer & Automation Consultant, developing Python-based data collection workflows with <strong>n8n</strong>, maintaining websites, performing backups, security scans, and managing content publishing.</p>
+            <p class="text-2xl text-white font-medium text-left-align mb-12 leading-relaxed">My technical expertise spans HTML, CSS, JavaScript, WordPress, WebGL, Python, automation, and cloud-aware development with AWS. I have a strong eye for clean, modern UI design and thrive in fast-paced, remote environments where I can solve real-world problems and deliver innovative solutions.
                 Passionate about creating intuitive, engaging web experiences and automation solutions, I continually seek to learn new skills and technologies to enhance my craft and contribute to forward-thinking teams and projects.
             </p>
         </div>
